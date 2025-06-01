@@ -53,8 +53,6 @@ export const settings = {
 	siteTitle: "Sreelekha Guggilam - Academic Website",
 	siteDescription: "Personal academic website of Dr. Sreelekha Guggilam, Assistant Professor in Data Science at Texas A&M University Corpus Christi. Research interests: Time-series databases, anomaly detection, quantum computing, foundation models.",
 	author: "S. Guggilam",
-	email: "sreelekha.guggilam@tamucc.edu",
-	// phone: "+1 716-903-4308",
 	socialLinks: {
 		linkedin: "https://linkedin.com/in/sreelekhaguggilam",
 		github: "https://github.com/sreelekh",
