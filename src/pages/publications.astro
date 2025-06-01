@@ -1,0 +1,137 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { publications } from "@/data/cv";
+import { highlightAuthor } from "@/lib/utils";
+import {template} from "@/settings";
+
+const ALL_PAPERS = publications;
+
+// Group publications by year
+const publicationsByYear = ALL_PAPERS.reduce((acc, paper) => {
+  const year = paper.time;
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(paper);
+  return acc;
+}, {});
+
+// Sort years in descending order (most recent first)
+const sortedYears = Object.keys(publicationsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+---
+
+<Layout title="Publications">
+  <div class="prose max-w-none">
+    <h1 class="text-3xl font-bold mb-8">Publications</h1>
+
+    <style>
+      /* Style for highlighted author - bold and underlined */
+      :global(.highlighted-author) {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    </style>
+
+    {
+      sortedYears.map((year) => (
+        <div class="mb-12">
+          <h2 class="text-2xl font-semibold mb-6 text-accent border-b-2 border-accent pb-2">
+            {year}
+          </h2>
+          
+          <div class="space-y-6">
+            {
+              publicationsByYear[year].map((paper) => (
+                <div class="card bg-base-200">
+                  <div class="card-body">
+                    <div class="text-base leading-relaxed">
+                      {/* APA Format: Authors (Year). Title. Journal/Venue. DOI/URL */}
+                      <span set:html={highlightAuthor(paper.authors)} />
+                      <span class="font-medium"> ({paper.time}). </span>
+                      
+                      {/* Title - not italicized in APA for journal articles */}
+                      {paper.link ? (
+                        <a href={template.base + paper.link} class="hover:text-accent font-medium">
+                          {paper.title}
+                        </a>
+                      ) : (
+                        <span class="font-medium">{paper.title}</span>
+                      )}
+                      <span>. </span>
+                      
+                      {/* Journal/Venue name - italicized in APA */}
+                      <span class="italic">{paper.venue}</span>
+                      
+                      {/* Add volume, issue, pages if available */}
+                      {paper.volume && (
+                        <span>, <span class="italic">{paper.volume}</span></span>
+                      )}
+                      {paper.issue && (
+                        <span>({paper.issue})</span>
+                      )}
+                      {paper.pages && (
+                        <span>, {paper.pages}</span>
+                      )}
+                      <span>.</span>
+                      
+                      {/* DOI or URL if available */}
+                      {paper.doi && (
+                        <span> https://doi.org/{paper.doi}</span>
+                      )}
+                      {paper.url && !paper.doi && (
+                        <span> <a href={paper.url} class="text-accent hover:underline">{paper.url}</a></span>
+                      )}
+                    </div>
+                    
+                    {/* Optional: Abstract section */}
+                    {paper.abstract && (
+                      <div class="mt-3">
+                        <details class="collapse collapse-arrow bg-base-300">
+                          <summary class="collapse-title text-sm font-medium">Abstract</summary>
+                          <div class="collapse-content">
+                            <p class="text-sm text-base-content/80 pt-2">{paper.abstract}</p>
+                          </div>
+                        </details>
+                      </div>
+                    )}
+                    
+                    {/* Optional: Action buttons */}
+                    {(paper.link || paper.pdf || paper.code) && (
+                      <div class="card-actions justify-end mt-4">
+                        {paper.link && (
+                          <a href={paper.link} class="btn btn-sm btn-outline">
+                            View Paper
+                          </a>
+                        )}
+                        {paper.pdf && (
+                          <a href={paper.pdf} class="btn btn-sm btn-outline">
+                            PDF
+                          </a>
+                        )}
+                        {paper.code && (
+                          <a href={paper.code} class="btn btn-sm btn-outline">
+                            Code
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      ))
+    }
+
+    <div class="flex justify-center mt-8">
+      <div class="join">
+        <button class="join-item btn btn-sm">«</button>
+        <button class="join-item btn btn-sm">1</button>
+        <button class="join-item btn btn-sm btn-active">2</button>
+        <button class="join-item btn btn-sm">3</button>
+        <button class="join-item btn btn-sm">»</button>
+      </div>
+    </div>
+  </div>
+</Layout>

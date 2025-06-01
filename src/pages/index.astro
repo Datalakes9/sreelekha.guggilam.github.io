@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import { profile } from '@/settings'
+import { publications } from '@/data/cv'
+import ProfilePictures from '@/assets/profile_pictures.jpg'
+import Hero from '@/components/ui/Hero.astro'
+import Grid from '@/components/ui/Grid.astro'
+import ArticleList from '@/components/ui/ArticleList.astro'
+
+const { fullName, title, institute, research_areas, email } = profile
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="Lekha-Homepage">
+	<!-- Hero Section -->
+	<section class='flex items-center gap-12 border-b pb-12'>
+		<Hero
+			fullName={fullName}
+			title={title}
+			institute={institute}
+			profilePicture={ProfilePictures}
+		/>
+	</section>
+
+	<section class='py-12 border-b'>
+		<div class="max-w-4xl">
+			<h2 class="text-3xl font-bold mb-8">Open Positions</h2>
+			
+			<div class="bg-gradient-to-r from-accent/10 to-secondary/10 rounded-lg p-6 border-l-4 border-accent">
+				<div class="flex items-start gap-4">
+					<!-- Icon -->
+					<div class="flex-shrink-0 mt-1">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+						</svg>
+					</div>
+					
+					<!-- Content -->
+					<div class="flex-1">
+						<div class="prose prose-sm max-w-none">
+							<p class="text-base-content/90 leading-relaxed mb-4">
+								I am recruiting motivated <strong>PhD students</strong> with strong backgrounds in 
+								<em>mathematics, data science, or statistics</em> to work with me on topics aligned with my lab's 
+								research directions including time-series databases, anomaly detection, quantum computing, and foundation models.
+							</p>
+							
+							<p class="text-base-content/90 leading-relaxed">
+								<strong>Master's and undergraduate students</strong> within Texas A&M University Corpus Christi and 
+								<strong>visiting scholars</strong> are always welcome to discuss research opportunities.
+							</p>
+						</div>
+						
+						<!-- Contact CTA -->
+						<div class="mt-4 flex flex-wrap gap-3">
+							<a href={`mailto:${email}`} 
+							   class="btn btn-accent btn-sm">
+								Contact Me
+							</a>
+							<!-- <a href="/cv" 
+							   class="btn btn-outline btn-sm">
+								📄 View Research
+							</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Research Areas -->
+	<section class='py-12 border-b'>
+		<Grid gridTitle='Research Areas' gridItems={research_areas} />
+	</section>
+
+	<!-- Openings -->
+
+
+	<!-- Recent Publications -->
+	<!-- <section class='py-12 border-t'>
+		<ArticleList listTitle='Recent Publications' listItems={publications} />
+	</section> -->
+</Layout>
+

@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+
+import SocialIcons from './SocialIcons.astro'
+
+
+const {fullName, title, institute, profilePicture} = Astro.props
+---
+<div class='flex-1'>
+  <h1 class='text-4xl font-bold mb-4'>
+    <span>About Me</span>
+  </h1>
+  <!-- <p class='text-xl text-gray-600 mb-4'>{title}{institute ? ` at ${institute}` : ''}</p> -->
+  <p class='text-lg mb-6'>
+    I am an Assistant Professor in Data Science at the Department of Mathematics and Statistics at Texas A&M University, Corpus Christi. I also serve as doctoral faculty in the Coastal and Marine Sciences Department. My research focuses on developing novel machine learning approaches for time-series analysis and anomaly detection, with applications in spatiotemporal modeling.
+</p>
+  <p class='text-lg mb-6'>
+    Prior to joining Texas A&M, I was a Research and Development Associate at Oak Ridge National Laboratory, where I was honored as a DOE Early Career LDRD awardee for my research in quantum computing for spatiotemporal modeling. I received my Ph.D. in Computational Data Science from the University at Buffalo, where I developed novel approaches for anomaly detection in evolving data streams.
+</p>
+  <!-- <div class='flex gap-4'>
+    <SocialIcons />
+  </div> -->
+</div>
+<div class='size-72 lg:block hidden'>
+  <!-- Add your profile image -->
+  <Image
+    src={profilePicture}
+    alt={fullName}
+    class='w-full h-full mask mask-circle size-44'
+  />
+</div>
