@@ -1,16 +1,15 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import image from '@astrojs/image';
 
 // --- Deployment Variables to Customize ---
 
 // ⚠️ CRITICAL: Set your full, live deployment URL for absolute paths (sitemaps, RSS).
 // Example: 'https://username.github.io/' or 'https://username.github.io/repo-name/'
-const SITE_URL = 'https://sreelekh.guggilam.github.io/'; 
+const SITE_URL = 'https://datalakes9.github.io/sreelekha.guggilam.github.io/';
 
 // ⚠️ CRITICAL: Set the base path for GitHub Pages subdirectories (your repo name).
+// For user/org sites (username.github.io), use '/'. For project sites, use '/repo-name/'.
 // Must start and end with a slash.
-// Example: '/my-portfolio-repo/'
 const REPO_BASE_PATH = '/sreelekha.guggilam.github.io/'; 
 
 // --- Configuration ---
@@ -26,12 +25,7 @@ export default defineConfig({
   // 2. INTEGRATIONS
   integrations: [
     // Enables Tailwind CSS and Daisy UI
-    tailwind(), 
-    
-    // Enables the Astro Image component and asset optimization
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp', 
-    }),
+    tailwind(),
   ],
   
   // 3. PATH ALIASES (for imports like '@/settings')
