@@ -1,0 +1,48 @@
+name: Update Publications from Google Scholar
+
+on:
+  schedule:
+    # Runs at midnight on the 1st of every month
+    - cron: '0 0 1 * *'
+  workflow_dispatch: # Manual trigger from Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install scholarly
+
+      - name: Fetch publications and update cv.ts
+        run: python3 scripts/update_publications.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet src/data/cv.ts; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new publications found."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Publications updated."
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/cv.ts
+          git commit -m "Update publications from Google Scholar (automated monthly sync)"
+          git push
