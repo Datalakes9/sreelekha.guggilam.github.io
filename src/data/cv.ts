@@ -82,7 +82,7 @@ export const grants = [
 		role: "co-Principal Investigator (Share: $8,000)"
 	},
 	{
-		title: "DOE-ORNL Early Career Laboratory Directed Research and Development Award",
+		title: "DOE-ORNL Early Career Laboratory Directors R&D Award",
 		amount: "$300,000",
 		duration: "2 years",
 		time: "Mar 2023 - Feb 2025",
