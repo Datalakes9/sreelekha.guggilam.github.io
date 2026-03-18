@@ -1,26 +1,33 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import PeopleProfileCard from '@/components/PeopleProfileCard.astro';
-// Import the current test photo
-import TestProfilePhoto from '@/assets/profile_pictures_sample.jpg'; 
-// *** ADD THIS NEW IMPORT LINE ***
-import maheshphoto from '@/assets/mahes.jpg';
-import mahesh from '@/assets/m2.jpg'; 
-// *******************************
+import anshikaPhoto from '@/assets/anshika_rani.jpg';
+import madhaviPhoto from '@/assets/madhavi_pagare.jpg';
+import yejinPhoto from '@/assets/yejin_hwang.jpeg';
 import type { Person } from '@/types/people';
-// Define the test data array
+
 const people: Person[] = [
     {
-        name: "Mahesh Cheedella ",
-        title: "Research Collaborator",
-        bio: "Mahesh Cheedella is a testing profile added to illustrate the layout for the People page. This profile demonstrates how to display collaborator information, including a bio and optional CV link. Please replace this with actual team member data.",
-        // 2. Use the correctly imported asset variable here
-        photoAsset: maheshphoto, 
-        cvPath: `${import.meta.env.BASE_URL}pdfs/Mahesh Cheedella Resume.pdf`,
+        name: "Madhavi Pagare",
+        title: "Postdoctoral Research Associate",
+        bio: "Madhavi Pagare is a Postdoctoral Research Associate at Texas A&M University-Corpus Christi. Her research focuses on causal analysis in social determinants of mental health for opioid use disorder, NLP-driven extraction from clinical notes, and predicting mental health determinants through AI techniques. She integrates advanced frameworks such as Siamese Neural Networks and Clinical-Longformer models to bridge healthcare data mining and mental health research.",
+        photoAsset: madhaviPhoto,
+        cvPath: `${import.meta.env.BASE_URL}pdfs/MADHAVI PAGARE _CV.pdf`,
     },
-    
-    
-    // Add more Person objects here for real profiles
+    {
+        name: "Yejin Hwang",
+        title: "Graduate Research & Teaching Assistant",
+        bio: "Yejin Hwang is a Master's student in Data Science at Texas A&M University-Corpus Christi with a 4.0 GPA and a Graduate Fellowship. Her research interests include trustworthy and fair ML, behavior-aware modeling, and sentiment and social signal analysis. Her thesis develops a multimodal forecasting system integrating Reddit sentiment and volatility features for financial time-series prediction. She previously worked as a Data Science Researcher at Samsung Medical Center.",
+        photoAsset: yejinPhoto,
+        cvPath: `${import.meta.env.BASE_URL}pdfs/CV_yejin_hwang_1215.pdf`,
+    },
+    {
+        name: "Anshika Rani",
+        title: "PhD Student, Coastal and Marine Sciences",
+        bio: "Anshika Rani is a PhD student in Coastal and Marine Sciences at Texas A&M University-Corpus Christi. She holds an M.Sc. in Mathematics from NIT Jalandhar, where her thesis focused on solving the Black-Scholes equation using Physics-Informed Neural Networks. Her current research bridges mathematics and AI for environmental and marine science applications, with a focus on deep learning, knowledge distillation, and high-performance computing.",
+        photoAsset: anshikaPhoto,
+        cvPath: `${import.meta.env.BASE_URL}pdfs/Resume_Anshika.pdf`,
+    },
 ];
 ---
 
