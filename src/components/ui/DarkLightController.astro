@@ -6,9 +6,8 @@ import {template} from  '../../settings.ts'
   <input
     type="checkbox"
     value={template.darkTheme}
-    checked={template.darkTheme === 'dark'} 
     class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-    data-choose-theme
+    id="theme-toggle"
 />
   <svg
     class="stroke-base-100 fill-base-100 col-start-1 row-start-1"
@@ -39,3 +38,20 @@ import {template} from  '../../settings.ts'
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
   </svg>
 </label>
+
+<script is:inline>
+  function syncToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    const stored = localStorage.getItem('theme') || 'light';
+    toggle.checked = (stored === 'dark');
+
+    toggle.addEventListener('change', () => {
+      const newTheme = toggle.checked ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme);
+      document.documentElement.setAttribute('data-theme', newTheme);
+    });
+  }
+  syncToggle();
+  document.addEventListener('astro:after-swap', syncToggle);
+</script>
