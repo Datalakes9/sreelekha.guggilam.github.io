@@ -5,9 +5,9 @@ import anshikaPhoto from '@/assets/anshika_rani.jpg';
 import madhaviPhoto from '@/assets/madhavi_pagare.jpg';
 import yejinPhoto from '@/assets/yejin_hwang.jpeg';
 import type { Person } from '@/types/people';
-import { mentorship } from '@/data/cv';
 
-const people: Person[] = [
+// Current members by category
+const currentPostdoc: Person[] = [
     {
         name: "Madhavi Pagare",
         title: "Postdoctoral Research Associate",
@@ -15,6 +15,27 @@ const people: Person[] = [
         photoAsset: madhaviPhoto,
         cvPath: `${import.meta.env.BASE_URL}pdfs/MADHAVI PAGARE _CV.pdf`,
     },
+];
+
+const currentPhd: Person[] = [
+    {
+        name: "Anshika Rani",
+        title: "PhD Student, Coastal and Marine Sciences",
+        bio: "Anshika Rani is a PhD student in Coastal and Marine Sciences at Texas A&M University-Corpus Christi. She holds an M.Sc. in Mathematics from NIT Jalandhar, where her thesis focused on solving the Black-Scholes equation using Physics-Informed Neural Networks. Her current research bridges mathematics and AI for environmental and marine science applications, with a focus on deep learning, knowledge distillation, and high-performance computing.",
+        photoAsset: anshikaPhoto,
+        cvPath: `${import.meta.env.BASE_URL}pdfs/Resume_Anshika.pdf`,
+    },
+    {
+        name: "Jahnavi Krishna Koda",
+        title: "PhD Student (Committee Member)",
+    },
+    {
+        name: "Nene Coulibaly",
+        title: "PhD Student (Committee Member)",
+    },
+];
+
+const currentMasters: Person[] = [
     {
         name: "Yejin Hwang",
         title: "Graduate Research & Teaching Assistant",
@@ -23,54 +44,80 @@ const people: Person[] = [
         cvPath: `${import.meta.env.BASE_URL}pdfs/CV_yejin_hwang_1215.pdf`,
     },
     {
-        name: "Anshika Rani",
-        title: "PhD Student, Coastal and Marine Sciences",
-        bio: "Anshika Rani is a PhD student in Coastal and Marine Sciences at Texas A&M University-Corpus Christi. She holds an M.Sc. in Mathematics from NIT Jalandhar, where her thesis focused on solving the Black-Scholes equation using Physics-Informed Neural Networks. Her current research bridges mathematics and AI for environmental and marine science applications, with a focus on deep learning, knowledge distillation, and high-performance computing.",
-        photoAsset: anshikaPhoto,
-        cvPath: `${import.meta.env.BASE_URL}pdfs/Resume_Anshika.pdf`,
+        name: "Vigneshwar Lokoji",
+        title: "Masters Student",
     },
 ];
 
-const mentorSections = [
-    { label: "PhD Advisees", items: mentorship.phd },
-    { label: "Masters Advisees", items: mentorship.masters },
-    { label: "Undergraduate Advisees", items: mentorship.undergrad },
-    { label: "High School Advisees", items: mentorship.highschool },
+// Alumni by category
+const alumniMasters: Person[] = [
+    {
+        name: "Nikitha Gugulothu",
+        title: "Masters Alumni — First Appointment: Oak Ridge National Laboratory",
+    },
 ];
+
+const alumniUndergrad: Person[] = [
+    {
+        name: "Tri Do",
+        title: "Undergrad Alumni — First Appointment: Ph.D at Oden Institute, UT Austin",
+    },
+    {
+        name: "Mikolaj Jakowski",
+        title: "Undergrad Alumni — University of Tennessee, Knoxville",
+    },
+];
+
+const alumniHighschool: Person[] = [
+    {
+        name: "Ruhaan Singh",
+        title: "High School Alumni — Farragut High School (2022-2024)",
+    },
+];
+
+// Build sections, filtering out empty ones
+const currentSections = [
+    { label: "Postdoctoral Researchers", people: currentPostdoc },
+    { label: "PhD Students", people: currentPhd },
+    { label: "Masters Students", people: currentMasters },
+].filter(s => s.people.length > 0);
+
+const alumniSections = [
+    { label: "Masters Alumni", people: alumniMasters },
+    { label: "Undergraduate Alumni", people: alumniUndergrad },
+    { label: "High School Alumni", people: alumniHighschool },
+].filter(s => s.people.length > 0);
 ---
 
 <Layout title="People">
   <div class="prose max-w-none">
     <h1 class="text-3xl font-bold mb-8">People</h1>
 
-    <section class="space-y-12 mb-12">
-      <h2 class="text-2xl font-bold border-b pb-2">Research Team</h2>
-      {people.map((person) => (
-          <PeopleProfileCard person={person} />
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold border-b-2 border-accent pb-2 mb-8">Current Members</h2>
+      {currentSections.map(({ label, people }) => (
+        <div class="mb-12">
+          <h3 class="text-xl font-semibold mb-6 text-accent">{label}</h3>
+          {people.map((person) => (
+            <PeopleProfileCard person={person} />
+          ))}
+        </div>
       ))}
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold border-b pb-2 mb-6">All Advisees & Mentees</h2>
-      <div class="space-y-6">
-        {mentorSections.map(({ label, items }) => items.length > 0 && (
-          <div>
-            <h3 class="text-lg font-bold mb-2">{label}</h3>
-            <ul class="list-disc list-inside space-y-1">
-              {items.map((m: any) => (
-                <li class="text-base-content/90">
-                  {m.name}
-                  {m.role ? ` (${m.role})` : ''}
-                  {m.institution ? `, ${m.institution}` : ''}
-                  {m.note ? ` — ${m.note}` : ''}
-                  <span class="text-base-content/60 text-sm ml-2">{m.time}</span>
-                </li>
-              ))}
-            </ul>
+    {alumniSections.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold border-b-2 border-accent pb-2 mb-8">Alumni</h2>
+        {alumniSections.map(({ label, people }) => (
+          <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-6 text-accent">{label}</h3>
+            {people.map((person) => (
+              <PeopleProfileCard person={person} />
+            ))}
           </div>
         ))}
-      </div>
-    </section>
+      </section>
+    )}
 
     <div class="pt-8">
         <h2 class="text-2xl font-bold mb-4">Joining the Team</h2>

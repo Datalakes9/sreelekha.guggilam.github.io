@@ -11,26 +11,35 @@ const { person } = Astro.props;
 <div class="card bg-base-200 shadow-xl mb-10 p-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
         <div class="md:col-span-1 flex justify-center">
-            <Image
-                src={person.photoAsset}
-                alt={`Profile picture of ${person.name}`}
-                class='mask mask-circle w-full max-w-56 h-auto object-cover'
-            />
+            {person.photoAsset ? (
+                <Image
+                    src={person.photoAsset}
+                    alt={`Profile picture of ${person.name}`}
+                    class='mask mask-circle w-full max-w-56 h-auto object-cover'
+                />
+            ) : (
+                <div class="mask mask-circle w-56 h-56 bg-base-300 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-base-content/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+            )}
         </div>
-        
+
         <div class="md:col-span-2">
             <h2 class="text-3xl font-bold mb-2">{person.name}</h2>
             <h3 class="text-xl font-semibold text-accent mb-4">{person.title}</h3>
-            
-            <p class="text-base leading-relaxed mb-6">
-                {person.bio}
-            </p>
 
-            {/* CV Download Link */}
+            {person.bio && (
+                <p class="text-base leading-relaxed mb-6">
+                    {person.bio}
+                </p>
+            )}
+
             {person.cvPath && (
-                <a 
-                    href={person.cvPath} 
-                    target="_blank" 
+                <a
+                    href={person.cvPath}
+                    target="_blank"
                     rel="noopener noreferrer"
                     class="btn btn-primary btn-sm text-primary-content"
                     download
