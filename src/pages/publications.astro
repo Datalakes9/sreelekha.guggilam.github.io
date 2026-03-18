@@ -2,8 +2,6 @@
 import Layout from "@/layouts/Layout.astro";
 import { publications } from "@/data/cv";
 import { highlightAuthor } from "@/lib/utils";
-import {template} from "@/settings";
-
 const ALL_PAPERS = publications;
 
 // Group publications by year
@@ -25,7 +23,6 @@ const sortedYears = Object.keys(publicationsByYear).sort((a, b) => parseInt(b) -
     <h1 class="text-3xl font-bold mb-8">Publications</h1>
 
     <style>
-      /* Style for highlighted author - bold and underlined */
       :global(.highlighted-author) {
         font-weight: bold;
         text-decoration: underline;
@@ -38,81 +35,42 @@ const sortedYears = Object.keys(publicationsByYear).sort((a, b) => parseInt(b) -
           <h2 class="text-2xl font-semibold mb-6 text-accent border-b-2 border-accent pb-2">
             {year}
           </h2>
-          
+
           <div class="space-y-6">
             {
-              publicationsByYear[year].map((paper) => (
+              publicationsByYear[year].map((paper: any, idx: number) => (
                 <div class="card bg-base-200">
                   <div class="card-body">
                     <div class="text-base leading-relaxed">
-                      {/* APA Format: Authors (Year). Title. Journal/Venue. DOI/URL */}
                       <span set:html={highlightAuthor(paper.authors)} />
                       <span class="font-medium"> ({paper.time}). </span>
-                      
-                      {/* Title - not italicized in APA for journal articles */}
-                      {paper.link ? (
-                        <a href={template.base + paper.link} class="hover:text-accent font-medium">
+
+                      {paper.doi ? (
+                        <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" class="hover:text-accent font-medium">
                           {paper.title}
                         </a>
                       ) : (
                         <span class="font-medium">{paper.title}</span>
                       )}
                       <span>. </span>
-                      
-                      {/* Journal/Venue name - italicized in APA */}
+
                       <span class="italic">{paper.venue}</span>
-                      
-                      {/* Add volume, issue, pages if available */}
-                      {paper.volume && (
-                        <span>, <span class="italic">{paper.volume}</span></span>
-                      )}
-                      {paper.issue && (
-                        <span>({paper.issue})</span>
-                      )}
-                      {paper.pages && (
-                        <span>, {paper.pages}</span>
-                      )}
                       <span>.</span>
-                      
-                      {/* DOI or URL if available */}
+
                       {paper.doi && (
-                        <span> https://doi.org/{paper.doi}</span>
-                      )}
-                      {paper.url && !paper.doi && (
-                        <span> <a href={paper.url} class="text-accent hover:underline">{paper.url}</a></span>
+                        <span> <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline text-sm">DOI</a></span>
                       )}
                     </div>
-                    
-                    {/* Optional: Abstract section */}
-                    {paper.abstract && (
-                      <div class="mt-3">
-                        <details class="collapse collapse-arrow bg-base-300">
-                          <summary class="collapse-title text-sm font-medium">Abstract</summary>
-                          <div class="collapse-content">
-                            <p class="text-sm text-base-content/80 pt-2">{paper.abstract}</p>
-                          </div>
-                        </details>
-                      </div>
-                    )}
-                    
-                    {/* Optional: Action buttons */}
-                    {(paper.link || paper.pdf || paper.code) && (
-                      <div class="card-actions justify-end mt-4">
-                        {paper.link && (
-                          <a href={paper.link} class="btn btn-sm btn-outline">
-                            View Paper
-                          </a>
-                        )}
-                        {paper.pdf && (
-                          <a href={paper.pdf} class="btn btn-sm btn-outline">
-                            PDF
-                          </a>
-                        )}
-                        {paper.code && (
-                          <a href={paper.code} class="btn btn-sm btn-outline">
-                            Code
-                          </a>
-                        )}
+
+                    {paper.citation && (
+                      <div class="card-actions justify-end mt-3">
+                        <button
+                          class="btn btn-sm btn-outline cite-btn"
+                          data-citation={paper.citation}
+                          data-modal-id={`cite-modal-${year}-${idx}`}
+                        >
+                          Cite
+                        </button>
                       </div>
                     )}
                   </div>
@@ -124,4 +82,50 @@ const sortedYears = Object.keys(publicationsByYear).sort((a, b) => parseInt(b) -
       ))
     }
   </div>
+
+  {/* Citation modal */}
+  <dialog id="cite-modal" class="modal">
+    <div class="modal-box max-w-2xl">
+      <h3 class="font-bold text-lg mb-4">Citation</h3>
+      <pre id="cite-text" class="bg-base-200 p-4 rounded-lg text-sm whitespace-pre-wrap break-words overflow-x-auto"></pre>
+      <div class="modal-action">
+        <button id="copy-cite-btn" class="btn btn-accent btn-sm">Copy to Clipboard</button>
+        <form method="dialog">
+          <button class="btn btn-sm">Close</button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", setupCiteButtons);
+  document.addEventListener("astro:after-swap", setupCiteButtons);
+
+  function setupCiteButtons() {
+    const modal = document.getElementById("cite-modal") as HTMLDialogElement;
+    const citeText = document.getElementById("cite-text")!;
+    const copyBtn = document.getElementById("copy-cite-btn")!;
+
+    document.querySelectorAll(".cite-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const citation = (btn as HTMLElement).dataset.citation || "";
+        citeText.textContent = citation;
+        modal.showModal();
+      });
+    });
+
+    copyBtn.addEventListener("click", () => {
+      const text = citeText.textContent || "";
+      navigator.clipboard.writeText(text).then(() => {
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => {
+          copyBtn.textContent = "Copy to Clipboard";
+        }, 2000);
+      });
+    });
+  }
+</script>
