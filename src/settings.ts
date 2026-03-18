@@ -31,20 +31,20 @@ export const social = {
 }
 
 export const template = {
-	website_url: 'https://sreelekha.guggilam.github.io/', // Astro needs to know your site’s deployed URL to generate a sitemap. It must start with http:// or https://
+	website_url: 'https://datalakes9.github.io/sreelekha.guggilam.github.io/', // Astro needs to know your site deployed URL to generate a sitemap. It must start with http:// or https://
 	menu_left: false,
 	transitions: false,
 	darkTheme: 'dark', // Select one of the Daisy UI Themes or create your own
 	lightTheme: 'light', // Select one of the Daisy UI Themes or create your own
 	excerptLength: 200,
 	postPerPage: 5,
-	base: '/' // Repository name starting with /
+	base: '/sreelekha.guggilam.github.io/' // Repository name starting with /
 }
 
 export const seo = {
 	default_title: 'Sreelekha Guggilam',
 	default_description: "Personal academic website of Dr. Sreelekha Guggilam, Assistant Professor in Data Science at Texas A&M University Corpus Christi. Research interests: Time-series databases, anomaly detection, quantum computing, foundation models.",
-	default_image: '/images/astro-academia.png',
+	default_image: '/sreelekha.guggilam.github.io/images/astro-academia.png',
 }
 
 // src/settings.ts - Website settings for Sreelekha Guggilam

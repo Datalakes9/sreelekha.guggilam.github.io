@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   // FIX: Match these to your GitHub URL
-  site: 'https://sreelekha.github.io',
-  base: '/', 
+  site: 'https://datalakes9.github.io',
+  base: '/sreelekha.guggilam.github.io/',
   output: 'static',
   integrations: [tailwind()],
   // Ensure we don't have the old '@astrojs/image' block here

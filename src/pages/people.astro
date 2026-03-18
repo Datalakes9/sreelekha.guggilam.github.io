@@ -16,7 +16,7 @@ const people: Person[] = [
         bio: "Mahesh Cheedella is a testing profile added to illustrate the layout for the People page. This profile demonstrates how to display collaborator information, including a bio and optional CV link. Please replace this with actual team member data.",
         // 2. Use the correctly imported asset variable here
         photoAsset: maheshphoto, 
-        cvPath: "/pdfs/Mahesh Cheedella Resume.pdf", 
+        cvPath: `${import.meta.env.BASE_URL}pdfs/Mahesh Cheedella Resume.pdf`,
     },
     
     
@@ -39,7 +39,7 @@ const people: Person[] = [
         <h2 class="text-2xl font-bold mb-4">Joining the Team</h2>
         <div class="card bg-base-100 border border-base-content/10">
             <div class="card-body">
-                <p class="text-lg">If you are interested in joining the research group as a student or collaborator, please check the <a href="/" class="text-accent hover:underline">Open Positions</a> section on the Home page.</p>
+                <p class="text-lg">If you are interested in joining the research group as a student or collaborator, please check the <a href={import.meta.env.BASE_URL} class="text-accent hover:underline">Open Positions</a> section on the Home page.</p>
             </div>
         </div>
     </div>

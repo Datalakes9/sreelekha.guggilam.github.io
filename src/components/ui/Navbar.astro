@@ -28,24 +28,24 @@ const { fullName, title, position } = profile
         <div class='mx-4 mt-8 flex-1 overflow-y-auto'>
             <ul class='space-y-2 menu menu-md'>
 				<li>
-					<a href="/" class='text-lg'>Home</a>
+					<a href={template.base} class='text-lg'>Home</a>
 				</li>
 				<li>
-					<a href="/publications" class='text-lg'>Publications</a>
+					<a href={`${template.base}publications`} class='text-lg'>Publications</a>
 				</li>
 				<li>
-					<a href="/cv" class='text-lg'>CV</a>
+					<a href={`${template.base}cv`} class='text-lg'>CV</a>
 				</li>
 				<li>
-					<a href="/people" class='text-lg'>People</a>
+					<a href={`${template.base}people`} class='text-lg'>People</a>
 				</li>
 				<li>
-					<a href="/projects" class='text-lg'>Projects</a>
+					<a href={`${template.base}projects`} class='text-lg'>Projects</a>
 				</li>
- 
+
 				{isBlogPopulated && (
 					<li>
-						<a href="/blog/1" class='text-lg'>News</a>
+						<a href={`${template.base}blog/1`} class='text-lg'>News</a>
 					</li>
 				)}
 			</ul>
