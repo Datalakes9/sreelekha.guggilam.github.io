@@ -1,16 +1,14 @@
 export interface Experience {
-  company: string;
-  time: string;
   title: string;
-  location?: string;
+  institution: string;
+  time: string;
   description?: string;
 }
 
 export interface Education {
-  school: string;
+  title: string;
+  institution: string;
   time: string;
-  degree: string;
-  location?: string;
   description?: string;
 }
 
@@ -27,21 +25,14 @@ export interface Publication {
   type?: 'conference' | 'journal' | 'workshop' | 'preprint';
   url?: string;
   doi?: string;
+  citation?: string;
   abstract?: string;
 }
 
 export function isExperience(element: Experience | Education): element is Experience {
-  return 'title' in element && 'company' in element;
+  return 'title' in element && 'institution' in element;
 }
 
 export function isEducation(element: Education | Experience): element is Education {
-  return 'school' in element && 'degree' in element;
-}
-
-export function isSkill(element: Skill | Publication): element is Skill {
-  return 'description' in element;
-}
-
-export function isPublication(element: Skill | Publication): element is Publication {
-  return 'authors' in element;
+  return 'title' in element && 'institution' in element;
 }

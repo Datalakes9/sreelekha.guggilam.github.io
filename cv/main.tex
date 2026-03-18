@@ -1,0 +1,345 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[style=ieee,url=false,doi=true,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
+\bibliography{papers}
+
+% ATS-friendly: minimal formatting, no graphics, no columns, standard fonts
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small Page \thepage\ of \pageref{LastPage}}
+
+\definecolor{accent}{HTML}{1a1a2e}
+\titleformat{\section}{\large\bfseries\color{accent}\uppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\setlist[itemize]{leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt}
+\setlist[enumerate]{leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt}
+
+% Bold author name in bibliography
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}\def\firstname{#2}\def\firstinit{#3}}
+\boldname{Guggilam}{Sreelekha}{}
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}}
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}}
+
+\begin{document}
+
+% ============================================================================
+% HEADER -- ATS reads top-down, single column, no tables
+% ============================================================================
+\begin{center}
+{\LARGE \textbf{Sreelekha Guggilam, Ph.D.}}\\[4pt]
+Assistant Professor in Data Science\\
+Department of Mathematics and Statistics, Texas A\&M University--Corpus Christi\\[4pt]
+Email: \href{mailto:sreelekha.guggilam@tamucc.edu}{sreelekha.guggilam@tamucc.edu}
+\enspace$\vert$\enspace Phone: +1 361-825-3485
+\enspace$\vert$\enspace LinkedIn: \href{https://www.linkedin.com/in/sreelekhaguggilam}{sreelekhaguggilam}\\
+GitHub: \href{https://github.com/Datalakes9}{Datalakes9}
+\enspace$\vert$\enspace Scholar: \href{https://scholar.google.com/citations?user=tzu0AM8AAAAJ}{Google Scholar}
+\enspace$\vert$\enspace Web: \href{https://datalakes9.github.io/sreelekha.guggilam.github.io/}{Homepage}
+\end{center}
+
+% ============================================================================
+% RESEARCH INTERESTS
+% ============================================================================
+\section{Research Interests}
+Time-series modeling and databases, Anomaly detection, Spatio-temporal analysis, Machine learning, Quantum computing for data science, Foundation models for time series, Mathematics in Artificial Intelligence
+
+% ============================================================================
+%% BEGIN EXPERIENCE
+% ============================================================================
+\section{Professional Experience}
+
+\textbf{Assistant Professor in Data Science} \hfill August 2024 -- Present\\
+Texas A\&M University--Corpus Christi, Department of Mathematics and Statistics\\
+Doctoral faculty in Coastal and Marine Sciences Department
+\begin{itemize}
+    \item Designed graduate course on Advanced Topics in Deep Learning covering generative AI, attention mechanisms, transformers, and model distillation techniques.
+    \item Active member of Academics Committee for Data Science PhD Program Planning Committee.
+    \item Active member of Graduate Admissions Committee (Mathematics \& Statistics and Coastal \& Marine Sciences).
+    \item Active member of Tenure Track Search Committee (Department of Mathematics and Statistics).
+    \item Active member of College of Science Curriculum Committee.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{Research and Development Associate in Machine Learning} \hfill March 2022 -- July 2024\\
+Oak Ridge National Laboratory, National Security Sciences Directorate\\
+Geo-spatial Science and Human Dynamics Division
+\begin{itemize}
+    \item DOE Early Career LDRD awardee for research in quantum computing for spatiotemporal modeling. Principal Investigator on developing novel quantum computing approaches for spatiotemporal classification and anomaly detection. Amongst the 8 selected awardees at ORNL in 2023.
+    \item Lead on modeling and algorithm development (invention disclosure submitted) for extended Large Deviations Anomaly Detection modeling for indoor pattern of life and human mobility.
+    \item Active contributor to multiple Generative AI foundation model projects using multimodal data.
+    \item Awarded 4 research grants as Principal Investigator and co-Principal Investigator.
+    \item Lead statistician on developing outbreak prediction models using alternate data sources.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{Research Assistant} \hfill September 2019 -- February 2022\\
+University at Buffalo, Institute of Computational Data Science \& Dept.\ of Computer Science and Engineering\\
+Mentors: Dr.\ Abani Patra (Tufts University), Dr.\ Varun Chandola (University at Buffalo)
+\begin{itemize}
+    \item Developed Integrated Clustering and Anomaly Detection (INCAD), a non-parametric unsupervised anomaly detection and clustering framework for streaming multivariate time series using extreme value theory.
+    \item Designed Large Deviations Anomaly Detection (LAD), a fast anomaly detection model for high-dimensional multivariate time-series databases. Applied to real-world COVID-19 trend analysis.
+    \item Created LAD Inspired Iterative Training (LIIT), a novel low-shot training algorithm for neural networks enabling faster convergence with limited data.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{Teaching Assistant} \hfill September 2017 -- September 2019\\
+University at Buffalo, Institute of Computational Data Science
+\begin{itemize}
+    \item Led and coordinated a team of teaching assistants for graduate courses in data science.
+    \item Collaborated on developing exams and assignments and led recitation sessions.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{Risk Manager, Global Corporate Portfolios} \hfill November 2015 -- June 2016\\
+American Express, World Financial Center, New York, NY
+\begin{itemize}
+    \item Quantified changes in spending trends in cross-sold clients prior to and post the on-boarding process.
+    \item Developed and improved risk margins for corporate clients in Global Corporate Payments.
+    \item Identified trends in risk-based industries and states to enable risk control actions on portfolios.
+\end{itemize}
+%% END EXPERIENCE
+
+% ============================================================================
+%% BEGIN EDUCATION
+% ============================================================================
+\section{Education}
+
+\textbf{Ph.D. in Computational Data Science (CDSE)} \hfill August 2017 -- June 2022\\
+University at Buffalo, The State University of New York, Buffalo, NY\\
+Dissertation: Non-parametric probabilistic anomaly detection in evolving data: Applications to time series
+\vspace{6pt}
+
+\textbf{Masters in Civil Engineering (Transportation Statistics)} \hfill August 2016 -- September 2017\\
+University at Buffalo, The State University of New York, Buffalo, NY
+\vspace{6pt}
+
+\textbf{Masters in Biostatistics-Bioinformatics} \hfill August 2014 -- September 2015\\
+University at Buffalo and Roswell Park Cancer Institute (RPCI), Buffalo, NY\\
+Thesis: Statistical assessment of TCGA ovarian cancer sequencing dataset for prognostic utility
+\vspace{6pt}
+
+\textbf{Bachelors in Mathematics (B.Math), Honors} \hfill July 2011 -- May 2014\\
+Indian Statistical Institute (ISI), Bangalore, India\\
+Full student scholarship (merit-based) throughout the completion of the degree
+%% END EDUCATION
+
+% ============================================================================
+%% BEGIN GRANTS
+% ============================================================================
+\section{Grant Support}
+
+\textbf{Autonomous Research Institute Fellowship} -- \$82,000 (2 years) \hfill Sep 2025 -- Aug 2027\\
+Title: Enhancing Preventive Monitoring through Spatiotemporal Anomaly Detection using Time Series Foundation Models\\
+Role: Principal Investigator (100\%)
+\vspace{6pt}
+
+\textbf{Port Corpus Christi} -- \$288,000 (1 year) \hfill Apr 2025 -- Dec 2025\\
+Title: Vulnerability Index Development -- Phase I -- Data Collection\\
+Role: co-Principal Investigator (Share: \$8,000)
+\vspace{6pt}
+
+\textbf{DOE-ORNL Early Career Development Research Award} -- \$300,000 (2 years) \hfill Mar 2023 -- Feb 2025\\
+Title: Quantum Variational Inference for Anomaly Detection in Spatiotemporal Data\\
+Role: Principal Investigator (100\%)
+\vspace{6pt}
+
+\textbf{ORNL Laboratory Directors R\&D SEED Funds} -- \$190,000 (2 years) \hfill Feb 2023 -- Jan 2025\\
+Title: Artificial Intelligence Models for Land Cover Forecasting\\
+Role: Contributor
+\vspace{6pt}
+
+\textbf{ORNL Laboratory Directors R\&D Funds} -- \$930,000 (2 years) \hfill Feb 2023 -- Jan 2025\\
+Title: Environmental Anomaly Detection for Biopreparedness\\
+Role: Co-Principal Investigator
+\vspace{6pt}
+
+\textbf{ORNL Laboratory Directors R\&D Funds} -- \$780,000 (2 years) \hfill Oct 2022 -- Sep 2024\\
+Title: Pattern of Life for Nuclear Non-proliferation\\
+Role: Co-Principal Investigator
+%% END GRANTS
+
+% ============================================================================
+% PUBLICATIONS (auto-generated from papers.bib)
+% ============================================================================
+\nocite{*}
+\printbibliography[title=Publications]
+
+% ============================================================================
+%% BEGIN TEACHING
+% ============================================================================
+\section{Teaching}
+
+\textbf{DASC-5307} -- Machine Learning in Data Science \hfill Spring 2026\\
+Texas A\&M University--Corpus Christi\vspace{4pt}
+
+\textbf{DASC-5390} -- Advanced Topics in Deep Learning \hfill Spring 2025\\
+Texas A\&M University--Corpus Christi\vspace{4pt}
+
+\textbf{EAS 501} -- Introduction to Numerical Mathematics for Computing and Data Science \hfill Fall 2017, Fall 2018\\
+University at Buffalo (Teaching Assistant)
+\vspace{4pt}
+
+\textbf{EAS 502} -- Introduction to Probability Theory for Data Science \hfill Fall 2017, Fall 2018\\
+University at Buffalo (Teaching Assistant)
+\vspace{4pt}
+
+\textbf{EAS 503} -- Programming and Database Fundamentals for Data Scientists \hfill Fall 2017, Fall 2018\\
+University at Buffalo (Teaching Assistant)
+\vspace{4pt}
+
+\textbf{EAS 504} -- Applications of Data Science: Industry Overview \hfill Summer 2017, Summer 2018\\
+University at Buffalo (Teaching Assistant)
+\vspace{4pt}
+
+\textbf{EAS 508} -- Statistical Learning and Data Mining I \hfill Fall 2017, Fall 2018\\
+University at Buffalo (Teaching Assistant)
+%% END TEACHING
+
+% ============================================================================
+%% BEGIN MENTORSHIP
+% ============================================================================
+\section{Mentorship}
+
+\textbf{Postdoc Mentees}
+\begin{itemize}
+    \item Madhavi Pagare \hfill 2025--Present
+\end{itemize}
+
+\textbf{PhD Advisees}
+\begin{itemize}
+    \item Anshika Rani (Advisor), Texas A\&M University--Corpus Christi \hfill 2025--Present
+    \item Jahnavi Krishna Koda (Committee Member), Texas A\&M University--Corpus Christi \hfill 2025--Present
+    \item Nene Coulibaly (Committee Member), Texas A\&M University--Corpus Christi \hfill 2024--Present
+\end{itemize}
+
+\textbf{Masters Advisees}
+\begin{itemize}
+    \item Vigneshwar Lokoji \hfill 2025--Present
+    \item Yejin Hwang, Texas A\&M Corpus Christi \hfill 2024--Present
+    \item Nikitha Gugulothu (First Appointment: Oak Ridge National Laboratory) \hfill 2022--2023
+\end{itemize}
+
+\textbf{Undergraduate Advisees}
+\begin{itemize}
+    \item Tri Do (First appointment: Ph.D at Oden Institute, UT Austin) \hfill 2023
+    \item Mikolaj Jakowski (University of Tennessee, Knoxville) \hfill 2023
+\end{itemize}
+
+\textbf{High School Advisees}
+\begin{itemize}
+    \item Ruhaan Singh (Farragut High School) \hfill 2022--2024
+\end{itemize}
+%% END MENTORSHIP
+
+% ============================================================================
+%% BEGIN SKILLS
+% ============================================================================
+\section{Technical Skills}
+
+\textbf{Research Focus:} Anomaly detection, Large Deviations Theory, Bayesian Non-parametric Models, Extreme Value Theory, Probabilistic Modeling, Multivariate Time Series, High-Dimensional Streams, Unsupervised Learning
+\vspace{4pt}
+
+\textbf{Deep Learning and AI:} Data and Knowledge Distillation, Transformers, Diffusion Models, Attention Mechanisms, Large Language Models, Foundation Models, Generative AI
+\vspace{4pt}
+
+\textbf{Programming:} Python (Pandas, NumPy, SciPy, Scikit-learn, PyTorch, TensorFlow, GeoPandas, MPI, OpenMP), C/C++, R, SQL, MATLAB, SAS
+\vspace{4pt}
+
+\textbf{Tools and Platforms:} NVIDIA Rapids, Docker, Hadoop, Spark, Git, HPC/Cluster Computing
+%% END SKILLS
+
+% ============================================================================
+%% BEGIN TALKS
+% ============================================================================
+\section{Talks and Presentations}
+
+\begin{itemize}
+    \item Time-series Modeling -- Opportunities and Challenges with Emerging Methods, University of Texas Rio Grande Valley \hfill 2025
+    \item Anomaly Detection in Spatio-temporal Data, ORNL Early Career Development Program \hfill 2023
+    \item Quantum Variational Inference for Spatiotemporal Anomaly Detection, Oak Ridge Scientific Advisory Board \hfill 2023
+    \item Quantum computing for spatiotemporal analysis, National Security Sciences Week \hfill 2023
+    \item Large Deviations for Accelerating Neural Networks Training, Conference on Data Analysis (CoDA), Santa Fe, NM \hfill 2023
+    \item Uncertainty, error and anomalies in ML models of remote sensing data, AGU Fall Meeting \hfill 2022
+    \item Classifying anomalous members in multivariate time series using large deviations principle, ICCS \hfill 2022
+    \item Classifying Collection of Multivariate Time Series Data, ASA UP-STAT Conference, Buffalo, NY \hfill 2022
+    \item Identifying anomalous COVID-19 trends using large deviations, Women in STEM Cooperative (WiSC) \hfill 2021
+    \item Integrated clustering and anomaly detection (INCAD) for streaming data, ICCS \hfill 2019
+    \item Integrating clustering and anomaly detection, CDSE Days, SUNY Buffalo \hfill 2019
+    \item National Program on Differential Equations (NPDE) Workshop, IIT Madras \hfill 2013
+\end{itemize}
+%% END TALKS
+
+% ============================================================================
+%% BEGIN AWARDS
+% ============================================================================
+\section{Awards and Scholarships}
+
+\begin{itemize}
+    \item Top Downloaded Author in Wiley Journal of Statistical Analysis and Data Mining \hfill 2023
+    \item Oak Ridge National Lab Early Career LDRD Competition Winner \hfill 2023
+    \item Runner up: STEM for Everyone -- Women in STEM Cooperative (WiSC) \hfill 2021
+    \item Travel Support: UB Navigate Project for women in STEM \hfill 2018
+    \item Travel Support: SAMSI -- Model Uncertainty: Mathematical and Statistical (MUMS) \hfill 2018
+    \item Travel Support: SAMSI -- Precision Medicine (PMED) \hfill 2018
+    \item Honors degree in Mathematics from Indian Statistical Institute \hfill 2014
+    \item Full student scholarship (merit-based) at Indian Statistical Institute \hfill 2011--2014
+\end{itemize}
+%% END AWARDS
+
+% ============================================================================
+%% BEGIN SERVICE
+% ============================================================================
+\section{Professional Service}
+
+\textbf{Organising Committees}
+\begin{itemize}
+    \item AGU 2023 Fall Meeting Session on Earth System Digital Twins: Prototypes and Federations \hfill 2023
+    \item AGU 2022 Fall Meeting Session on AI/ML Assurance: Applications in Geospatial Science \hfill 2022
+    \item KDD Workshop on Data-driven Humanitarian Mapping \hfill 2022
+    \item CDSE Days, Institute of Computational Data Science, SUNY Buffalo \hfill 2018, 2019
+\end{itemize}
+
+\textbf{Referee Service}\\
+Data Mining and Knowledge Discovery, Information Systems, Journal of Computational Science, Journal of Hydrology, IEEE Geoscience and Remote Sensing Letters, Frontiers in Earth, Information Sciences, Neural Networks
+\vspace{6pt}
+
+\textbf{Panel Judge}
+\begin{itemize}
+    \item Judge for Health Sciences and Technology Research Symposium \hfill 2025
+    \item Judge for the IGNITE Talks \hfill 2023
+    \item Judge for SCUDEM VII -- Modeling with Differential Equations \hfill 2022, 2023
+    \item Albert Einstein Distinguished Educator Fellowship (AEF) Program \hfill 2022
+\end{itemize}
+%% END SERVICE
+
+% ============================================================================
+%% BEGIN MEMBERSHIPS
+% ============================================================================
+\section{Professional Memberships}
+
+\begin{itemize}
+    \item Delta Omega Honorary Society in Public Health \hfill 2023--Present
+    \item Institute of Electrical and Electronics Engineers (IEEE) \hfill 2022--Present
+    \item Association for Computing Machinery (ACM) \hfill 2022--Present
+    \item American Geophysical Union (AGU) \hfill 2022--Present
+    \item Society for Industrial and Applied Mathematics (SIAM) \hfill 2019--Present
+    \item Association for Women in Mathematics (AWM) \hfill 2017--2023
+    \item Women in STEM Cooperative (WiSC) \hfill 2017--2022
+\end{itemize}
+%% END MEMBERSHIPS
+
+\end{document}

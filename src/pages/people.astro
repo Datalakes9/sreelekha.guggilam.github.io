@@ -5,6 +5,7 @@ import anshikaPhoto from '@/assets/anshika_rani.jpg';
 import madhaviPhoto from '@/assets/madhavi_pagare.jpg';
 import yejinPhoto from '@/assets/yejin_hwang.jpeg';
 import type { Person } from '@/types/people';
+import { mentorship } from '@/data/cv';
 
 const people: Person[] = [
     {
@@ -29,6 +30,13 @@ const people: Person[] = [
         cvPath: `${import.meta.env.BASE_URL}pdfs/Resume_Anshika.pdf`,
     },
 ];
+
+const mentorSections = [
+    { label: "PhD Advisees", items: mentorship.phd },
+    { label: "Masters Advisees", items: mentorship.masters },
+    { label: "Undergraduate Advisees", items: mentorship.undergrad },
+    { label: "High School Advisees", items: mentorship.highschool },
+];
 ---
 
 <Layout title="People">
@@ -40,6 +48,28 @@ const people: Person[] = [
       {people.map((person) => (
           <PeopleProfileCard person={person} />
       ))}
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold border-b pb-2 mb-6">All Advisees & Mentees</h2>
+      <div class="space-y-6">
+        {mentorSections.map(({ label, items }) => items.length > 0 && (
+          <div>
+            <h3 class="text-lg font-bold mb-2">{label}</h3>
+            <ul class="list-disc list-inside space-y-1">
+              {items.map((m: any) => (
+                <li class="text-base-content/90">
+                  {m.name}
+                  {m.role ? ` (${m.role})` : ''}
+                  {m.institution ? `, ${m.institution}` : ''}
+                  {m.note ? ` — ${m.note}` : ''}
+                  <span class="text-base-content/60 text-sm ml-2">{m.time}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </section>
 
     <div class="pt-8">

@@ -1,6 +1,7 @@
 // src/data/cv.ts - CV data for Sreelekha Guggilam
+// Source of truth: cv/main.tex
 
-// Education entries (sorted by time - most recent first)
+// Education entries
 export const education = [
 	{
 		title: "Ph.D. in Computational Data Science (CDSE)",
@@ -18,7 +19,7 @@ export const education = [
 		title: "Masters in Biostatistics-Bioinformatics",
 		institution: "University at Buffalo and Roswell Park Cancer Institute (RPCI)",
 		time: "2014 - 2015",
-		description: "Buffalo, NY. Thesis: Statistical assessment of tcga ovarian cancer sequencing dataset for prognostic utility"
+		description: "Buffalo, NY. Thesis: Statistical assessment of TCGA ovarian cancer sequencing dataset for prognostic utility"
 	},
 	{
 		title: "Bachelors in Mathematics (B.Math), Honors",
@@ -28,41 +29,93 @@ export const education = [
 	}
 ];
 
-// Professional experience entries (sorted by time - most recent first)
+// Professional experience entries
 export const experiences = [
 	{
 		title: "Assistant Professor in Data Science",
-		institution: "Texas A&M Corpus Christi, Department of Mathematics and Statistics",
+		institution: "Texas A&M University--Corpus Christi, Department of Mathematics and Statistics",
 		time: "2024 - Present",
-		description: "Corpus Christi, TX. Doctoral faculty in Coastal and Marine Sciences Department. Research interests: Time-series databases, anomaly detection, quantum computing, foundation models. Active member of Academics Committee for the Data Science PhD Program Planning Committee and Graduate Admissions Committee. Designed graduate course on advanced topics in Deep Learning including Generative AI model, basics of natural language processing, attention mechanisms, transformers, and model distillation."
+		description: "Doctoral faculty in Coastal and Marine Sciences Department. Designed graduate course on Advanced Topics in Deep Learning covering generative AI, attention mechanisms, transformers, and model distillation techniques. Active member of Academics Committee for Data Science PhD Program Planning Committee, Graduate Admissions Committee, Tenure Track Search Committee, and College of Science Curriculum Committee."
 	},
 	{
 		title: "Research and Development Associate in Machine Learning",
 		institution: "Oak Ridge National Laboratory, National Security Sciences Directorate",
 		time: "2022 - 2024",
-		description: "Oak Ridge, TN. Geo-spatial Science and Human Dynamics Division. Focus: Human mobility and pattern of life, disease outbreak prediction, EM signals analysis, time-series databases, anomaly detection, spatio-temporal analysis, quantum computing, foundation models, signals data. DOE Early Career LDRD awardee for research in Quantum computing for spatiotemporal modeling. Principal Investigator on developing novel quantum computing approaches for spatiotemporal classification and anomaly detection. Amongst the 8 selected awardees at ORNL in 2023. Lead on modeling and algorithm development for extended Large deviations Anomaly Detection modeling. Active contributor to multiple Generative AI foundation model projects using multimodal data. Awarded 4 research grants as Principle Investigator and co-Principle Investigator. Lead statistician on developing outbreak prediction models using alternate data sources."
+		description: "Geo-spatial Science and Human Dynamics Division. DOE Early Career LDRD awardee for research in quantum computing for spatiotemporal modeling. Principal Investigator on developing novel quantum computing approaches for spatiotemporal classification and anomaly detection. Amongst the 8 selected awardees at ORNL in 2023. Lead on modeling and algorithm development (invention disclosure submitted) for extended Large Deviations Anomaly Detection modeling. Active contributor to multiple Generative AI foundation model projects using multimodal data. Awarded 4 research grants as Principal Investigator and co-Principal Investigator."
 	},
 	{
-		title: "Research Assistant - Anomaly Detection in Streaming High-Dimensional Time Series Database",
-		institution: "University at Buffalo, Institute of Computational Data Science and Department of Computer Science & Engineering",
+		title: "Research Assistant",
+		institution: "University at Buffalo, Institute of Computational Data Science & Dept. of Computer Science and Engineering",
 		time: "2019 - 2022",
-		description: "Buffalo, NY. Mentors: Dr. Abani Patra (UB ACM2E Lab, Tufts University), Dr. Varun Chandola (UB Data Science Research Group). Solved outstanding problems in anomaly detection in evolving data and collections of multivariate time series. Developed: 1) Integrated Clustering and Anomaly Detection (INCAD) algorithm for non-parametric, unsupervised anomaly detection in streaming data using extreme value theory. 2) Large Deviations Anomaly Detection (LAD) model for high-dimensional multivariate time-series database. 3) LAD Inspired Iterative Training (LIIT) algorithm for artificial neural networks."
+		description: "Mentors: Dr. Abani Patra (Tufts University), Dr. Varun Chandola (University at Buffalo). Developed INCAD for non-parametric unsupervised anomaly detection using extreme value theory. Designed LAD for high-dimensional multivariate time-series databases. Created LIIT, a novel low-shot training algorithm for neural networks."
 	},
 	{
 		title: "Teaching Assistant",
 		institution: "University at Buffalo, Institute of Computational Data Science",
 		time: "2017 - 2019",
-		description: "Buffalo, NY. Led and coordinated a team of teaching assistants for graduate courses in data science. Collaborated on developing exams and assignments and lead recitation sessions."
+		description: "Led and coordinated a team of teaching assistants for graduate courses in data science. Collaborated on developing exams and assignments and led recitation sessions."
 	},
 	{
-		title: "Risk Manager",
-		institution: "American Express, Global Corporate Portfolios",
+		title: "Risk Manager, Global Corporate Portfolios",
+		institution: "American Express, World Financial Center, New York, NY",
 		time: "2015 - 2016",
-		description: "World Financial Center NY, NY. Risk And Data Analytics for Corporate Credit Portfolios. Quantified the change in spending trends in cross-sold clients prior to and post the on-boarding process. Developed and improved risk margins for corporate clients in Global Corporate Payments. Responsible for identifying trends in risk-based industries and states to enable risk control actions on the portfolios."
+		description: "Quantified changes in spending trends in cross-sold clients. Developed and improved risk margins for corporate clients in Global Corporate Payments. Identified trends in risk-based industries and states to enable risk control actions on portfolios."
 	}
 ];
 
-// Publications list (selected key publications)
+// Grant support
+export const grants = [
+	{
+		title: "Autonomous Research Institute Fellowship",
+		amount: "$82,000",
+		duration: "2 years",
+		time: "Sep 2025 - Aug 2027",
+		project: "Enhancing Preventive Monitoring through Spatiotemporal Anomaly Detection using Time Series Foundation Models",
+		role: "Principal Investigator (100%)"
+	},
+	{
+		title: "Port Corpus Christi",
+		amount: "$288,000",
+		duration: "1 year",
+		time: "Apr 2025 - Dec 2025",
+		project: "Vulnerability Index Development -- Phase I -- Data Collection",
+		role: "co-Principal Investigator (Share: $8,000)"
+	},
+	{
+		title: "DOE-ORNL Early Career Development Research Award",
+		amount: "$300,000",
+		duration: "2 years",
+		time: "Mar 2023 - Feb 2025",
+		project: "Quantum Variational Inference for Anomaly Detection in Spatiotemporal Data",
+		role: "Principal Investigator (100%)"
+	},
+	{
+		title: "ORNL Laboratory Directors R&D SEED Funds",
+		amount: "$190,000",
+		duration: "2 years",
+		time: "Feb 2023 - Jan 2025",
+		project: "Artificial Intelligence Models for Land Cover Forecasting",
+		role: "Contributor"
+	},
+	{
+		title: "ORNL Laboratory Directors R&D Funds",
+		amount: "$930,000",
+		duration: "2 years",
+		time: "Feb 2023 - Jan 2025",
+		project: "Environmental Anomaly Detection for Biopreparedness",
+		role: "Co-Principal Investigator"
+	},
+	{
+		title: "ORNL Laboratory Directors R&D Funds",
+		amount: "$780,000",
+		duration: "2 years",
+		time: "Oct 2022 - Sep 2024",
+		project: "Pattern of Life for Nuclear Non-proliferation",
+		role: "Co-Principal Investigator"
+	}
+];
+
+// Publications list (auto-updated by scripts/update_publications.py)
 export const publications = [
 	{
 		title: "Physics-informed machine learning to predict solvatochromic parameters of designer solvents with case studies in CO2 and lignin dissolution",
@@ -139,10 +192,10 @@ export const publications = [
 	{
 		title: "Position Papers for the ASCR Workshop on Basic Research Needs in Quantum Computing and Networking",
 		authors: "Pavel Lougovski and Ojas Parekh and Joe Broz and Mark Byrd and Yanne Chembo and Wibe A de Jong and Eden Figueroa and Travis S Humble and Jeffrey Larson and Greg Quiroz and Krysta M Svore",
-		venue: "US Department of Energy (USDOE), Washington, DC (United States). Office of Science, Advanced Scientific Computing Research (ASCR)",
+		venue: "US Department of Energy (USDOE), Office of Science, ASCR",
 		time: "2023",
 		doi: "10.2172/2283320",
-		citation: "P. Lougovski, O. Parekh, J. Broz, M. Byrd, Y. Chembo, W. A. d. Jong, E. Figueroa, T. S. Humble, J. Larson, G. Quiroz, K. M. Svore (2023). Position Papers for the ASCR Workshop on Basic Research Needs in Quantum Computing and Networking. US Department of Energy (USDOE), Washington, DC (United States). Office of Science, Advanced Scientific Computing Research (ASCR). https://doi.org/10.2172/2283320"
+		citation: "P. Lougovski, O. Parekh, J. Broz, M. Byrd, Y. Chembo, W. A. de Jong, E. Figueroa, T. S. Humble, J. Larson, G. Quiroz, K. M. Svore (2023). Position Papers for the ASCR Workshop on Basic Research Needs in Quantum Computing and Networking. US Department of Energy (USDOE), Office of Science, ASCR. https://doi.org/10.2172/2283320"
 	},
 	{
 		title: "Large Deviations for Accelerating Neural Networks Training",
@@ -179,18 +232,18 @@ export const publications = [
 	{
 		title: "Data-Driven Humanitarian Mapping and Policymaking: Toward Planetary-Scale Resilience, Equity, and Sustainability",
 		authors: "SnehalkumarNeil' Gaikwad and Shankar Iyer and Dalton Lunga and Takahiro Yabe and Xiaofan Liang and Bhavani Ananthabhotla and Nikhil Behari and Sreelekha Guggilam and Guanghua Chi",
-		venue: ", pp. 4872-4873",
+		venue: "Proceedings of the 28th ACM SIGKDD Conference, pp. 4872-4873",
 		time: "2022",
 		doi: "",
-		citation: "S. Gaikwad, S. Iyer, D. Lunga, T. Yabe, X. Liang, B. Ananthabhotla, N. Behari, S. Guggilam, G. Chi (2022). Data-Driven Humanitarian Mapping and Policymaking: Toward Planetary-Scale Resilience, Equity, and Sustainability. , pp. 4872-4873."
+		citation: "S. Gaikwad, S. Iyer, D. Lunga, T. Yabe, X. Liang, B. Ananthabhotla, N. Behari, S. Guggilam, G. Chi (2022). Data-Driven Humanitarian Mapping and Policymaking. ACM SIGKDD, pp. 4872-4873."
 	},
 	{
 		title: "AI/ML Assurance: Applications in Geospatial Sciences II Poster",
 		authors: "Sreelekha Guggilam and Vandy Tombs and Dan Lu and Abani K Patra",
-		venue: "Fall Meeting 2022",
+		venue: "AGU Fall Meeting 2022",
 		time: "2022",
 		doi: "",
-		citation: "S. Guggilam, V. Tombs, D. Lu, A. K. Patra (2022). AI/ML Assurance: Applications in Geospatial Sciences II Poster. Fall Meeting 2022."
+		citation: "S. Guggilam, V. Tombs, D. Lu, A. K. Patra (2022). AI/ML Assurance: Applications in Geospatial Sciences II Poster. AGU Fall Meeting 2022."
 	},
 	{
 		title: "Uncertainty, Error and Anomalies in ML models of Remote Sensing Data",
@@ -242,14 +295,105 @@ export const publications = [
 	},
 ];
 
-// Skills array
+// Teaching
+export const teaching = [
+	{ course: "DASC-5307", title: "Machine Learning in Data Science", semester: "Spring 2026", institution: "Texas A&M University--Corpus Christi" },
+	{ course: "DASC-5390", title: "Advanced Topics in Deep Learning", semester: "Spring 2025", institution: "Texas A&M University--Corpus Christi" },
+	{ course: "EAS 501", title: "Introduction to Numerical Mathematics for Computing and Data Science", semester: "Fall 2017, Fall 2018", institution: "University at Buffalo", role: "Teaching Assistant" },
+	{ course: "EAS 502", title: "Introduction to Probability Theory for Data Science", semester: "Fall 2017, Fall 2018", institution: "University at Buffalo", role: "Teaching Assistant" },
+	{ course: "EAS 503", title: "Programming and Database Fundamentals for Data Scientists", semester: "Fall 2017, Fall 2018", institution: "University at Buffalo", role: "Teaching Assistant" },
+	{ course: "EAS 504", title: "Applications of Data Science: Industry Overview", semester: "Summer 2017, Summer 2018", institution: "University at Buffalo", role: "Teaching Assistant" },
+	{ course: "EAS 508", title: "Statistical Learning and Data Mining I", semester: "Fall 2017, Fall 2018", institution: "University at Buffalo", role: "Teaching Assistant" },
+];
+
+// Mentorship
+export const mentorship = {
+	postdoc: [
+		{ name: "Madhavi Pagare", time: "2025--Present" },
+	],
+	phd: [
+		{ name: "Anshika Rani", role: "Advisor", institution: "Texas A&M University--Corpus Christi", time: "2025--Present" },
+		{ name: "Jahnavi Krishna Koda", role: "Committee Member", institution: "Texas A&M University--Corpus Christi", time: "2025--Present" },
+		{ name: "Nene Coulibaly", role: "Committee Member", institution: "Texas A&M University--Corpus Christi", time: "2024--Present" },
+	],
+	masters: [
+		{ name: "Vigneshwar Lokoji", time: "2025--Present" },
+		{ name: "Yejin Hwang", institution: "Texas A&M Corpus Christi", time: "2024--Present" },
+		{ name: "Nikitha Gugulothu", note: "First Appointment: Oak Ridge National Laboratory", time: "2022--2023" },
+	],
+	undergrad: [
+		{ name: "Tri Do", note: "First appointment: Ph.D at Oden Institute, UT Austin", time: "2023" },
+		{ name: "Mikolaj Jakowski", institution: "University of Tennessee, Knoxville", time: "2023" },
+	],
+	highschool: [
+		{ name: "Ruhaan Singh", institution: "Farragut High School", time: "2022--2024" },
+	],
+};
+
+// Talks and presentations
+export const talks = [
+	{ title: "Time-series Modeling -- Opportunities and Challenges with Emerging Methods", venue: "University of Texas Rio Grande Valley", year: "2025" },
+	{ title: "Anomaly Detection in Spatio-temporal Data", venue: "ORNL Early Career Development Program", year: "2023" },
+	{ title: "Quantum Variational Inference for Spatiotemporal Anomaly Detection", venue: "Oak Ridge Scientific Advisory Board", year: "2023" },
+	{ title: "Quantum computing for spatiotemporal analysis", venue: "National Security Sciences Week", year: "2023" },
+	{ title: "Large Deviations for Accelerating Neural Networks Training", venue: "Conference on Data Analysis (CoDA), Santa Fe, NM", year: "2023" },
+	{ title: "Uncertainty, error and anomalies in ML models of remote sensing data", venue: "AGU Fall Meeting", year: "2022" },
+	{ title: "Classifying anomalous members in multivariate time series using large deviations principle", venue: "ICCS", year: "2022" },
+	{ title: "Classifying Collection of Multivariate Time Series Data", venue: "ASA UP-STAT Conference, Buffalo, NY", year: "2022" },
+	{ title: "Identifying anomalous COVID-19 trends using large deviations", venue: "Women in STEM Cooperative (WiSC)", year: "2021" },
+	{ title: "Integrated clustering and anomaly detection (INCAD) for streaming data", venue: "ICCS", year: "2019" },
+	{ title: "Integrating clustering and anomaly detection", venue: "CDSE Days, SUNY Buffalo", year: "2019" },
+	{ title: "National Program on Differential Equations (NPDE) Workshop", venue: "IIT Madras", year: "2013" },
+];
+
+// Awards
+export const awards = [
+	{ title: "Top Downloaded Author in Wiley Journal of Statistical Analysis and Data Mining", year: "2023" },
+	{ title: "Oak Ridge National Lab Early Career LDRD Competition Winner", year: "2023" },
+	{ title: "Runner up: STEM for Everyone -- Women in STEM Cooperative (WiSC)", year: "2021" },
+	{ title: "Travel Support: UB Navigate Project for women in STEM", year: "2018" },
+	{ title: "Travel Support: SAMSI -- Model Uncertainty: Mathematical and Statistical (MUMS)", year: "2018" },
+	{ title: "Travel Support: SAMSI -- Precision Medicine (PMED)", year: "2018" },
+	{ title: "Honors degree in Mathematics from Indian Statistical Institute", year: "2014" },
+	{ title: "Full student scholarship (merit-based) at Indian Statistical Institute", year: "2011--2014" },
+];
+
+// Professional service
+export const service = {
+	committees: [
+		{ title: "AGU 2023 Fall Meeting Session on Earth System Digital Twins: Prototypes and Federations", year: "2023" },
+		{ title: "AGU 2022 Fall Meeting Session on AI/ML Assurance: Applications in Geospatial Science", year: "2022" },
+		{ title: "KDD Workshop on Data-driven Humanitarian Mapping", year: "2022" },
+		{ title: "CDSE Days, Institute of Computational Data Science, SUNY Buffalo", year: "2018, 2019" },
+	],
+	referee: [
+		"Data Mining and Knowledge Discovery", "Information Systems", "Journal of Computational Science",
+		"Journal of Hydrology", "IEEE Geoscience and Remote Sensing Letters", "Frontiers in Earth",
+		"Information Sciences", "Neural Networks"
+	],
+	judge: [
+		{ title: "Judge for Health Sciences and Technology Research Symposium", year: "2025" },
+		{ title: "Judge for the IGNITE Talks", year: "2023" },
+		{ title: "Judge for SCUDEM VII -- Modeling with Differential Equations", year: "2022, 2023" },
+		{ title: "Albert Einstein Distinguished Educator Fellowship (AEF) Program", year: "2022" },
+	],
+};
+
+// Professional memberships
+export const memberships = [
+	{ org: "Delta Omega Honorary Society in Public Health", time: "2023--Present" },
+	{ org: "Institute of Electrical and Electronics Engineers (IEEE)", time: "2022--Present" },
+	{ org: "Association for Computing Machinery (ACM)", time: "2022--Present" },
+	{ org: "American Geophysical Union (AGU)", time: "2022--Present" },
+	{ org: "Society for Industrial and Applied Mathematics (SIAM)", time: "2019--Present" },
+	{ org: "Association for Women in Mathematics (AWM)", time: "2017--2023" },
+	{ org: "Women in STEM Cooperative (WiSC)", time: "2017--2022" },
+];
+
+// Skills
 export const skills = [
-	"Research Areas: Time-series databases, Anomaly detection, Quantum computing, Foundation models, Spatio-temporal analysis",
-	"Machine Learning: Deep Learning, Generative AI models, Natural language processing, Attention mechanisms, Transformers, Model distillation",
-	"Statistical Methods: Extreme value theory, Large deviations theory, Bayesian methods, Multivariate time series analysis",
-	"Programming & Tools: Python, R, Statistical computing, High-dimensional data analysis",
-	"Quantum Computing: Quantum variational inference, Spatiotemporal modeling, Quantum algorithms",
-	"Applications: Human mobility analysis, Disease outbreak prediction, EM signals analysis, Pattern of life modeling, Geospatial sciences",
-	"Data Science: Streaming data analysis, Clustering algorithms, Non-parametric methods, Unsupervised learning",
-	"Interdisciplinary Research: Biostatistics, Bioinformatics, Transportation statistics, Environmental modeling, GeoAI"
+	"Research Focus: Anomaly detection, Large Deviations Theory, Bayesian Non-parametric Models, Extreme Value Theory, Probabilistic Modeling, Multivariate Time Series, High-Dimensional Streams, Unsupervised Learning",
+	"Deep Learning and AI: Data and Knowledge Distillation, Transformers, Diffusion Models, Attention Mechanisms, Large Language Models, Foundation Models, Generative AI",
+	"Programming: Python (Pandas, NumPy, SciPy, Scikit-learn, PyTorch, TensorFlow, GeoPandas, MPI, OpenMP), C/C++, R, SQL, MATLAB, SAS",
+	"Tools and Platforms: NVIDIA Rapids, Docker, Hadoop, Spark, Git, HPC/Cluster Computing",
 ];
