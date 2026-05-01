@@ -118,6 +118,14 @@ export const grants = [
 // Publications list (auto-updated by scripts/update_publications.py)
 export const publications = [
 	{
+		title: "The future of artificial intelligence and the mathematical and physical sciences (AI+ MPS)",
+		authors: "Andrew Ferguson and Marisa LaFleur and Lars Ruthotto and Jesse Thaler and Yuan-Sen Ting and Pratyush Tiwary and Soledad Villar",
+		venue: "Machine Learning: Science and Technology, vol. 7, no. 2, pp. 023001",
+		time: "2026",
+		doi: "10.1088/2632-2153/ae3e4e",
+		citation: "A. Ferguson, M. LaFleur, L. Ruthotto, J. Thaler, Y. Ting, P. Tiwary, S. Villar (2026). The future of artificial intelligence and the mathematical and physical sciences (AI+ MPS). Machine Learning: Science and Technology, vol. 7, no. 2, pp. 023001. https://doi.org/10.1088/2632-2153/ae3e4e"
+	},
+	{
 		title: "Physics-informed machine learning to predict solvatochromic parameters of designer solvents with case studies in CO2 and lignin dissolution",
 		authors: "Mood Mohan and Nikhitha Gugulothu and Sreelekha Guggilam and T Rajitha Rajeshwar and Michelle K Kidder and Jeremy C Smith",
 		venue: "Green Chemical Engineering, vol. 6, no. 2, pp. 275-287",
@@ -132,14 +140,6 @@ export const publications = [
 		time: "2025",
 		doi: "10.1021/acssuschemeng.5c08057",
 		citation: "M. Mohan, S. Guggilam, D. Bhowmik, M. K. Kidder, J. C. Smith (2025). Leveraging Natural Language Processing and Generative Models in Molecular Chemistry: Property Prediction and Novel Compound Generation. ACS Sustainable Chemistry & Engineering, vol. 13, no. 48, pp. 20737-20753. https://doi.org/10.1021/acssuschemeng.5c08057"
-	},
-	{
-		title: "The future of artificial intelligence and the mathematical and physical sciences (AI+ MPS)",
-		authors: "Andrew L Ferguson and Marisa LaFleur and Lars Ruthotto and Jesse Thaler and Yuan-Sen Ting and Pratyush Tiwary and Soledad Villar",
-		venue: "Machine Learning: Science and Technology",
-		time: "2025",
-		doi: "10.1088/2632-2153/ae3e4e",
-		citation: "A. L. Ferguson, M. LaFleur, L. Ruthotto, J. Thaler, Y. Ting, P. Tiwary, S. Villar (2025). The future of artificial intelligence and the mathematical and physical sciences (AI+ MPS). Machine Learning: Science and Technology. https://doi.org/10.1088/2632-2153/ae3e4e"
 	},
 	{
 		title: "Iterative Misclassification Error Training (IMET): An Optimized Neural Network Training Technique for Image Classification",
@@ -192,10 +192,10 @@ export const publications = [
 	{
 		title: "Position Papers for the ASCR Workshop on Basic Research Needs in Quantum Computing and Networking",
 		authors: "Pavel Lougovski and Ojas Parekh and Joe Broz and Mark Byrd and Yanne Chembo and Wibe A de Jong and Eden Figueroa and Travis S Humble and Jeffrey Larson and Greg Quiroz and Krysta M Svore",
-		venue: "US Department of Energy (USDOE), Office of Science, ASCR",
+		venue: "US Department of Energy (USDOE), Washington, DC (United States). Office of Science, Advanced Scientific Computing Research (ASCR)",
 		time: "2023",
 		doi: "10.2172/2283320",
-		citation: "P. Lougovski, O. Parekh, J. Broz, M. Byrd, Y. Chembo, W. A. de Jong, E. Figueroa, T. S. Humble, J. Larson, G. Quiroz, K. M. Svore (2023). Position Papers for the ASCR Workshop on Basic Research Needs in Quantum Computing and Networking. US Department of Energy (USDOE), Office of Science, ASCR. https://doi.org/10.2172/2283320"
+		citation: "P. Lougovski, O. Parekh, J. Broz, M. Byrd, Y. Chembo, W. A. d. Jong, E. Figueroa, T. S. Humble, J. Larson, G. Quiroz, K. M. Svore (2023). Position Papers for the ASCR Workshop on Basic Research Needs in Quantum Computing and Networking. US Department of Energy (USDOE), Washington, DC (United States). Office of Science, Advanced Scientific Computing Research (ASCR). https://doi.org/10.2172/2283320"
 	},
 	{
 		title: "Large Deviations for Accelerating Neural Networks Training",
@@ -232,18 +232,18 @@ export const publications = [
 	{
 		title: "Data-Driven Humanitarian Mapping and Policymaking: Toward Planetary-Scale Resilience, Equity, and Sustainability",
 		authors: "SnehalkumarNeil' Gaikwad and Shankar Iyer and Dalton Lunga and Takahiro Yabe and Xiaofan Liang and Bhavani Ananthabhotla and Nikhil Behari and Sreelekha Guggilam and Guanghua Chi",
-		venue: "Proceedings of the 28th ACM SIGKDD Conference, pp. 4872-4873",
+		venue: ", pp. 4872-4873",
 		time: "2022",
 		doi: "",
-		citation: "S. Gaikwad, S. Iyer, D. Lunga, T. Yabe, X. Liang, B. Ananthabhotla, N. Behari, S. Guggilam, G. Chi (2022). Data-Driven Humanitarian Mapping and Policymaking. ACM SIGKDD, pp. 4872-4873."
+		citation: "S. Gaikwad, S. Iyer, D. Lunga, T. Yabe, X. Liang, B. Ananthabhotla, N. Behari, S. Guggilam, G. Chi (2022). Data-Driven Humanitarian Mapping and Policymaking: Toward Planetary-Scale Resilience, Equity, and Sustainability. , pp. 4872-4873."
 	},
 	{
 		title: "AI/ML Assurance: Applications in Geospatial Sciences II Poster",
 		authors: "Sreelekha Guggilam and Vandy Tombs and Dan Lu and Abani K Patra",
-		venue: "AGU Fall Meeting 2022",
+		venue: "Fall Meeting 2022",
 		time: "2022",
 		doi: "",
-		citation: "S. Guggilam, V. Tombs, D. Lu, A. K. Patra (2022). AI/ML Assurance: Applications in Geospatial Sciences II Poster. AGU Fall Meeting 2022."
+		citation: "S. Guggilam, V. Tombs, D. Lu, A. K. Patra (2022). AI/ML Assurance: Applications in Geospatial Sciences II Poster. Fall Meeting 2022."
 	},
 	{
 		title: "Uncertainty, Error and Anomalies in ML models of Remote Sensing Data",
