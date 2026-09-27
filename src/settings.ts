@@ -13,6 +13,7 @@ export const profile = {
 		{ title: 'Machine learning' },
 		{ title: 'Mathematics in Artificial Intelligence' },
 		{ title: 'Foundation models for time series' },
+		{ title: 'Knowledge distillation' },
 		// { title: 'Statistical machine learning' },
 		// { title: 'Physics', description: 'Brief description of the research interest', field: 'physics' },
 	],
@@ -70,7 +71,8 @@ export const settings = {
 		// "Quantum computing",
 		"Foundation models",
 		"Spatio-temporal analysis",
-		"Machine Learning"
+		"Machine Learning",
+		"Knowledge distillation"
 		// "GeoAI"
 	]
 };
