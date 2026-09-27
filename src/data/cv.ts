@@ -309,7 +309,8 @@ export const teaching = [
 // Mentorship
 export const mentorship = {
 	postdoc: [
-		{ name: "Madhavi Pagare", time: "2025--Present" },
+		{ name: "Priyanka Gautam", time: "Sept 2026--Present" },
+		{ name: "Madhavi Pagare", time: "2025--May 2026" },
 	],
 	phd: [
 		{ name: "Anshika Rani", role: "Advisor", institution: "Texas A&M University--Corpus Christi", time: "2025--Present" },
